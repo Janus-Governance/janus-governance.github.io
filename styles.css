@@ -36,6 +36,14 @@ h1 {
   text-align: center;
 }
 
+.logo {
+  display: block;
+  height: 80px;
+  max-height: 80px;
+  width: auto;
+  margin: 0 auto 14px;
+}
+
 .section {
   margin-top: 28px;
 }
@@ -93,23 +101,11 @@ a:focus {
   color: #cfcfcf;
 }
 
-.card-link {
-  margin-top: 10px;
-  color: #cfcfcf;
-  font-size: 0.95rem;
-  word-break: break-word;
-}
-
 .card:hover,
 .card:focus {
   border-color: var(--accent);
   background: #111;
   text-decoration: none;
-}
-
-.card:hover .card-link,
-.card:focus .card-link {
-  color: var(--accent);
 }
 
 .footer {

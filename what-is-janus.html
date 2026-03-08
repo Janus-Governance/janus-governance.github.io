@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>What is Janus</title>
+    <meta
+      name="description"
+      content="What is Janus — a governance architecture for AI-assisted environments focused on evidence, auditability, human authority, and deterministic reconstruction."
+    />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <a class="back" href="/">← Back to Janus Governance</a>
+
+      <header aria-label="Page header">
+        <h1>What is Janus</h1>
+        <p class="subtitle">Traceable governance for AI-assisted systems</p>
+      </header>
+
+      <section class="section" aria-label="Overview">
+        <h2>Overview</h2>
+        <p class="description">
+          Janus is a governance core for systems where humans, software, and AI participate in
+          decision processes.
+        </p>
+        <p class="description" style="margin-top: 10px">
+          Janus does not execute business logic. It governs how system evolution is evaluated,
+          recorded, and reconstructed.
+        </p>
+      </section>
+
+      <section class="section" aria-label="The problem">
+        <h2>The problem</h2>
+        <p class="description">
+          Most systems record what happened. Very few systems record what should have happened but
+          did not.
+        </p>
+        <p class="description" style="margin-top: 10px">
+          This becomes critical in AI-assisted environments, where omissions and missing validations
+          can create risk.
+        </p>
+      </section>
+
+      <section class="section" aria-label="Janus approach">
+        <h2>The Janus approach</h2>
+        <p class="description">
+          Janus evaluates governance conditions rather than application logic. Key ideas include the
+          evidence model (E+ / E−), governance events, human authority, the audit writer boundary,
+          and deterministic rebuild.
+        </p>
+        <pre aria-label="Janus pipeline summary" style="margin-top: 12px">
+activity → evaluation → governance event → audit log → rebuildable state
+</pre>
+      </section>
+
+      <section class="section" aria-label="Governance flow diagram">
+        <h2>Governance flow</h2>
+        <img
+          src="/janus-governance-flow.svg"
+          alt="Janus governance flow diagram"
+          style="max-width: 900px; width: 100%; height: auto; margin-top: 12px"
+        />
+        <p class="description" style="margin-top: 12px">
+          The governance flow shows the conceptual boundary: governance sits above execution and
+          ensures evidence, auditability, and rebuildable state.
+        </p>
+      </section>
+
+      <section class="section" aria-label="Component map">
+        <h2>Component map</h2>
+        <p class="description">Explore the components of the Janus governance architecture.</p>
+        <nav class="cards" aria-label="Component links">
+          <a class="card" href="https://core.janusgovernance.org">
+            <div class="card-title">Core</div>
+            <div class="card-desc">Principles of the Janus governance architecture.</div>
+          </a>
+          <a class="card" href="https://docs.janusgovernance.org">
+            <div class="card-title">Docs</div>
+            <div class="card-desc">Guides and documentation for developers.</div>
+          </a>
+          <a class="card" href="https://runtime.janusgovernance.org">
+            <div class="card-title">Runtime</div>
+            <div class="card-desc">Reference implementation and execution model.</div>
+          </a>
+          <a class="card" href="https://rfc.janusgovernance.org">
+            <div class="card-title">RFC</div>
+            <div class="card-desc">Formal specifications of the Janus architecture.</div>
+          </a>
+        </nav>
+      </section>
+
+      <section class="section" aria-label="Navigation">
+        <h2>Navigation</h2>
+        <ul class="link-list" aria-label="Navigation links">
+          <li><a href="/">Home</a></li>
+          <li><a href="https://core.janusgovernance.org">Core</a></li>
+          <li><a href="https://docs.janusgovernance.org">Docs</a></li>
+          <li><a href="https://runtime.janusgovernance.org">Runtime</a></li>
+          <li><a href="https://rfc.janusgovernance.org">RFC</a></li>
+        </ul>
+      </section>
+
+      <footer class="footer" aria-label="Footer">
+        <a href="https://github.com/Janus-Governance">Janus-Governance on GitHub</a>
+      </footer>
+    </main>
+  </body>
+</html>

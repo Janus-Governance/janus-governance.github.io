@@ -74,6 +74,23 @@ a:focus {
   text-underline-offset: 3px;
 }
 
+.back {
+  display: inline-block;
+  margin-bottom: 22px;
+  color: #cfcfcf;
+  font-size: 0.98rem;
+}
+
+.link-list {
+  margin: 12px 0 0;
+  padding-left: 18px;
+  color: #cfcfcf;
+}
+
+.link-list li {
+  margin: 6px 0;
+}
+
 .cards {
   margin-top: 34px;
   display: grid;

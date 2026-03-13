@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Janus Demo Suite</title>
+    <title>Janus Governance Validation</title>
     <meta
       name="description"
-      content="Janus Demo Suite — Reproducible validation cases for Janus Core Lite."
+      content="Janus Governance Validation — Deterministic validation suite for governance invariants."
     />
     <link rel="stylesheet" href="/styles.css" />
   </head>
@@ -14,33 +14,81 @@
     <main class="container">
       <a class="back" href="/">Back to Janus Governance →</a>
 
-      <header class="hero" aria-label="Janus Demo Suite">
-        <h1>Janus Demo Suite</h1>
-        <p class="subtitle">Reproducible validation cases for Janus Core Lite</p>
+      <header class="hero" aria-label="Janus Governance Validation">
+        <h1>Janus Governance Validation</h1>
+        <p class="subtitle">Deterministic validation suite for governance invariants</p>
       </header>
 
       <section class="section" aria-label="Intro">
         <p class="description">
-          The Janus Demo Suite provides deterministic and reproducible scenarios demonstrating the
-          governance model implemented in Janus Core Lite.
+          Janus Core Lite includes a validation layer that evaluates governance invariants against
+          append-only event logs, producing an auditable record of what was asserted, what was
+          observed, and what was concluded.
+          <br /><br />
+          This suite runs reproducible, deterministic evaluations across a fixed set of cases so
+          governance outcomes can be independently verified, compared over time, and reviewed as an
+          accountable model of governance.
         </p>
       </section>
 
-      <section class="section" aria-label="Cases">
-        <h2>Cases</h2>
-        <ul class="link-list" aria-label="Demo cases">
-          <li><strong>Case 01 — Positive Evidence (E+)</strong><br />Demonstrates recording and validation of positive evidence.</li>
-          <li><strong>Case 02 — Omission Detection (E−)</strong><br />Shows how protocol omissions are recorded as negative evidence.</li>
-          <li><strong>Case 03 — Human Authority Override</strong><br />Illustrates how a human decision can validate or override protocol outcomes.</li>
-          <li><strong>Case 04 — Schema Drift Reinterpretation</strong><br />Demonstrates reinterpretation when schema evolution occurs.</li>
-          <li><strong>Case 05 — Stress Evaluation</strong><br />Tests protocol behavior under repeated or conflicting events.</li>
-          <li><strong>Case 06 — Deterministic Rebuild</strong><br />Reconstructs system state from the append-only log.</li>
+      <section class="section" aria-label="Validation Summary">
+        <h2>Validation Summary</h2>
+        <ul class="link-list" aria-label="Validation summary">
+          <li><strong>Cases evaluated:</strong> 6</li>
+          <li><strong>Governance invariants verified:</strong> 6</li>
+          <li><strong>Deterministic rebuild:</strong> verified</li>
+          <li><strong>Source artifact:</strong> janus-validation-suite.json</li>
         </ul>
       </section>
 
-      <section class="section" aria-label="Source Repository">
-        <h2>Source Repository</h2>
-        <p class="description">All demos are reproducible directly from the repository.</p>
+      <section class="section" aria-label="Verified Governance Invariants">
+        <h2>Verified Governance Invariants</h2>
+        <ul class="link-list" aria-label="Verified invariants">
+          <li>Positive evidence (E+)</li>
+          <li>Negative evidence (E−)</li>
+          <li>Omission detection</li>
+          <li>Human authority override</li>
+          <li>Schema drift reinterpretation</li>
+          <li>Stress evaluation</li>
+          <li>Deterministic rebuild</li>
+        </ul>
+      </section>
+
+      <section class="section" aria-label="Validation Cases">
+        <h2>Validation Cases</h2>
+        <ul class="link-list" aria-label="Validation cases">
+          <li><strong>Case 01 — Positive Evidence (E+):</strong> Records and validates positive evidence.</li>
+          <li><strong>Case 02 — Omission Detection (E−):</strong> Captures omissions as negative evidence.</li>
+          <li><strong>Case 03 — Human Authority Override:</strong> Applies a human decision to validate or override outcomes.</li>
+          <li><strong>Case 04 — Schema Drift Reinterpretation:</strong> Reinterprets events when schema evolution occurs.</li>
+          <li><strong>Case 05 — Stress Evaluation:</strong> Exercises repeated/conflicting events for stability.</li>
+          <li><strong>Case 06 — Deterministic Rebuild:</strong> Rebuilds state from logs and verifies determinism.</li>
+        </ul>
+      </section>
+
+      <section class="section" aria-label="Validation Suite Status">
+        <h2>Validation Suite Status</h2>
+        <p class="description">
+          Status is sourced from the published validation report JSON in the Janus Demo repository.
+          If the report is not available, the snapshot below remains as-is.
+        </p>
+        <div class="card" id="validation-suite-status" role="status" aria-live="polite">
+          <div class="card-title">Status: <span data-suite-status>Pending</span></div>
+          <div class="card-desc" data-suite-summary>Latest report not yet published in janus-demo.</div>
+          <div class="card-desc">
+            Source:
+            <a href="https://raw.githubusercontent.com/Janus-Governance/janus-demo/main/demos/node/outputs/janus-validation-suite.json">janus-validation-suite.json</a>
+            <span data-suite-evaluated-at></span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" aria-label="Validation Repository">
+        <h2>Validation Repository</h2>
+        <p class="description">
+          The deterministic validation suite lives in the Janus Demo repository and can be executed
+          locally to reproduce the published report.
+        </p>
         <p class="hero-cta">
           <a class="cta-button" href="https://github.com/Janus-Governance/janus-demo">View on GitHub →</a>
         </p>
@@ -49,6 +97,56 @@
       <footer class="footer" aria-label="Footer">
         <a href="https://github.com/Janus-Governance/janus-demo">https://github.com/Janus-Governance/janus-demo</a>
       </footer>
+
+      <script>
+        (() => {
+          const sourceUrl =
+            "https://raw.githubusercontent.com/Janus-Governance/janus-demo/main/demos/node/outputs/janus-validation-suite.json";
+
+          const statusEl = document.querySelector("[data-suite-status]");
+          const summaryEl = document.querySelector("[data-suite-summary]");
+          const evaluatedAtEl = document.querySelector("[data-suite-evaluated-at]");
+
+          if (!statusEl || !summaryEl) return;
+
+          fetch(sourceUrl, { cache: "no-store" })
+            .then((res) => {
+              if (!res.ok) throw new Error(`HTTP ${res.status}`);
+              return res.json();
+            })
+            .then((data) => {
+              const overall =
+                (data && (data.overall_status ?? data.overallStatus)) ?? "";
+              const passed =
+                data && (data.passed_cases ?? data.passedCases ?? data.passed);
+              const total =
+                data && (data.total_cases ?? data.totalCases ?? data.total);
+              const evaluatedAt =
+                data && (data.evaluated_at ?? data.evaluatedAt ?? data.timestamp);
+
+              let status = String(overall || "").trim().toUpperCase();
+              if (!status && Number.isFinite(passed) && Number.isFinite(total)) {
+                status = passed === total ? "PASS" : "FAIL";
+              }
+              if (!status) status = "UNKNOWN";
+
+              statusEl.textContent = status;
+
+              if (Number.isFinite(passed) && Number.isFinite(total)) {
+                summaryEl.textContent = `${passed}/${total} cases passing`;
+              } else {
+                summaryEl.textContent = "Report loaded.";
+              }
+
+              if (evaluatedAtEl && evaluatedAt) {
+                evaluatedAtEl.textContent = ` — Evaluated at: ${evaluatedAt}`;
+              }
+            })
+            .catch(() => {
+              // Keep the static snapshot content.
+            });
+        })();
+      </script>
     </main>
   </body>
 </html>

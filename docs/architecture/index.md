@@ -15,10 +15,10 @@ It explains why Janus is built the way it is.
 
 ## Pages
 
-- [Origin of Janus](./origin-of-janus.md) — how Janus emerged from instability in AI-assisted development
-- [Janus Stack](./janus-stack.md) — layered architecture of the Janus system
-- [Architectural Positioning](./positioning.md) — differences between Janus and adjacent architectural models
-- [When to Use Janus](./when-to-use-janus.md) — recommended and non-recommended scenarios
+- [Origin of Janus](./origin-of-janus/) — how Janus emerged from instability in AI-assisted development
+- [Janus Stack](./janus-stack/) — layered architecture of the Janus system
+- [Architectural Positioning](./positioning/) — differences between Janus and adjacent architectural models
+- [When to Use Janus](./when-to-use-janus/) — recommended and non-recommended scenarios
 
 ## Reading path
 

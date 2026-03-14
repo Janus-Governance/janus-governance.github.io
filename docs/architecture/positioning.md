@@ -1,7 +1,7 @@
 ---
 layout: janus
 title: Architectural Positioning
-permalink: /docs/architecture/positioning.md
+permalink: /docs/architecture/positioning/
 ---
 
 # Architectural Positioning

@@ -1,7 +1,7 @@
 ---
 layout: janus
 title: Janus Stack
-permalink: /docs/architecture/janus-stack.md
+permalink: /docs/architecture/janus-stack/
 ---
 
 # Janus Architecture

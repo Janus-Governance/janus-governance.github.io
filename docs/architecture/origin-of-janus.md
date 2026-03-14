@@ -1,7 +1,7 @@
 ---
 layout: janus
 title: Origin of Janus
-permalink: /docs/architecture/origin-of-janus.md
+permalink: /docs/architecture/origin-of-janus/
 ---
 
 # Origin of Janus

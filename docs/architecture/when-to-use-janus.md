@@ -1,7 +1,7 @@
 ---
 layout: janus
 title: When to Use Janus
-permalink: /docs/architecture/when-to-use-janus.md
+permalink: /docs/architecture/when-to-use-janus/
 ---
 
 # When to Use Janus

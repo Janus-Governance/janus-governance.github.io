@@ -1,3 +1,9 @@
+---
+layout: janus
+title: Janus Stack
+permalink: /docs/architecture/janus-stack.md
+---
+
 # Janus Architecture
 
 Janus is a micro-governance layer designed to stabilize AI-assisted development.

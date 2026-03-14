@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{{ page.title | default: "Janus Governance" }}</title>
+    {% if page.description %}
+    <meta name="description" content="{{ page.description }}" />
+    {% endif %}
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <a class="back" href="/">Back to Janus Governance →</a>
+
+      <section class="section markdown" aria-label="Content">
+        {{ content }}
+      </section>
+
+      <footer class="footer" aria-label="Footer">
+        <a href="https://github.com/Janus-Governance">Janus-Governance on GitHub</a>
+      </footer>
+    </main>
+  </body>
+</html>

@@ -1,3 +1,9 @@
+---
+layout: janus
+title: Architectural Positioning
+permalink: /docs/architecture/positioning.md
+---
+
 # Architectural Positioning
 
 Janus does not replace existing architectural models.

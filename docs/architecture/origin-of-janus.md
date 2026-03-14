@@ -1,3 +1,9 @@
+---
+layout: janus
+title: Origin of Janus
+permalink: /docs/architecture/origin-of-janus.md
+---
+
 # Origin of Janus
 
 Janus originated from instability in AI-assisted development.

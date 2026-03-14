@@ -1,3 +1,9 @@
+---
+layout: janus
+title: When to Use Janus
+permalink: /docs/architecture/when-to-use-janus.md
+---
+
 # When to Use Janus
 
 Janus is designed for environments where governance of autonomous or semi-autonomous development processes becomes necessary.

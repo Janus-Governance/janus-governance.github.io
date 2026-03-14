@@ -1,3 +1,9 @@
+---
+layout: janus
+title: Architecture
+permalink: /docs/architecture/
+---
+
 # Architecture
 
 This section explains the architectural model of Janus beyond the Core RFC series.

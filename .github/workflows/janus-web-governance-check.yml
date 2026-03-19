@@ -68,6 +68,7 @@ jobs:
 
           if [ "${fail}" -ne 0 ]; then
             echo "WEB_VALIDATION_FAILED"
+            echo "JANUS_EVENT=OMISSION_DETECTED"
             exit 1
           fi
 

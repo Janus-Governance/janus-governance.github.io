@@ -1,0 +1,74 @@
+name: Janus Web Governance Check
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  web-governance-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Validate web publishing governance (apex)
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          fail=0
+
+          err() {
+            echo "::error::$*"
+            fail=1
+          }
+
+          if [ ! -f CNAME ]; then
+            err "CNAME missing"
+          fi
+
+          if [ ! -f robots.txt ]; then
+            err "robots.txt missing"
+          fi
+
+          if [ ! -f sitemap.xml ]; then
+            err "sitemap.xml missing"
+          fi
+
+          if [ ! -f README.md ]; then
+            err "README.md missing"
+          fi
+
+          domain=""
+          if [ -f CNAME ]; then
+            domain="$(tr -d '\r\n' < CNAME | head -n 1 | xargs)"
+            if [ -z "${domain}" ]; then
+              err "CNAME is empty"
+            fi
+          fi
+
+          if [ -n "${domain}" ] && [ -f README.md ]; then
+            if ! grep -qF "${domain}" README.md; then
+              err "README.md does not contain declared domain: ${domain}"
+            fi
+          fi
+
+          if [ -n "${domain}" ]; then
+            robots_code="$(curl -sS -o /dev/null -w '%{http_code}' --max-time 20 "https://${domain}/robots.txt" || echo '000')"
+            if [ "${robots_code}" != "200" ]; then
+              err "robots.txt not reachable (HTTP ${robots_code}): https://${domain}/robots.txt"
+            fi
+
+            sitemap_code="$(curl -sS -o /dev/null -w '%{http_code}' --max-time 20 "https://${domain}/sitemap.xml" || echo '000')"
+            if [ "${sitemap_code}" != "200" ]; then
+              err "sitemap.xml not reachable (HTTP ${sitemap_code}): https://${domain}/sitemap.xml"
+            fi
+          fi
+
+          if [ "${fail}" -ne 0 ]; then
+            echo "WEB_VALIDATION_FAILED"
+            exit 1
+          fi
+
+          echo "WEB_VALIDATION_OK"

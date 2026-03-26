@@ -17,4 +17,20 @@
     <loc>https://runtime.janusgovernance.org/sitemap.xml</loc>
   </sitemap>
 
+  <url>
+    <loc>https://janusgovernance.org/</loc>
+  </url>
+
+  <url>
+    <loc>https://janusgovernance.org/what-is-janus.html</loc>
+  </url>
+
+  <url>
+    <loc>https://janusgovernance.org/demos.html</loc>
+  </url>
+
+  <url>
+    <loc>https://framework.janusgovernance.org/</loc>
+  </url>
+
 </sitemapindex>

@@ -35,4 +35,4 @@ Normative governance requirements remain in the Core and RFC documents.
 ## Papers
 
 - Janus: Evidence-Based Governance for AI-Assisted Development Systems  
-	https://core.janusgovernance.org/docs/paper/janus-framework-paper-v1.0.pdf
+	https://github.com/Janus-Governance/janus-governance-core/blob/main/docs/paper/janus-framework-paper-v1.0.pdf

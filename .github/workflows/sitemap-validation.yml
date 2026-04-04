@@ -1,0 +1,43 @@
+name: Daily Sitemap Validation
+
+on:
+  schedule:
+    - cron: '0 3 * * *' # Every day at 03:00 UTC
+  workflow_dispatch:
+
+jobs:
+  validate-sitemaps:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check sitemap endpoints
+        run: |
+          set -e
+          endpoints=(
+            "https://janusgovernance.org/sitemap.xml"
+            "https://janusgovernance.org/sitemap-pages.xml"
+            "https://core.janusgovernance.org/sitemap.xml"
+            "https://docs.janusgovernance.org/sitemap.xml"
+            "https://rfc.janusgovernance.org/sitemap.xml"
+            "https://runtime.janusgovernance.org/sitemap.xml"
+            "https://framework.janusgovernance.org/sitemap.xml"
+          )
+          for url in "${endpoints[@]}"; do
+            echo "Validating $url"
+            # Add cache-busting query param and send no-cache headers
+            cache_buster="cb=$(date +%s%N)"
+            if [[ "$url" == *"?"* ]]; then
+              url_cb="$url&$cache_buster"
+            else
+              url_cb="$url?$cache_buster"
+            fi
+            status=$(curl -s -o response.xml -w "%{http_code}" -H "Cache-Control: no-cache" -H "Pragma: no-cache" "$url_cb")
+            if [ "$status" != "200" ]; then
+              echo "FAILED: $url did not return HTTP 200 (got $status)" >&2
+              exit 1
+            fi
+            if ! grep -qE '<(sitemapindex|urlset)[^>]*>' response.xml; then
+              echo "FAILED: $url does not contain <sitemapindex> or <urlset> root tag" >&2
+              exit 1
+            fi
+          done
+          echo "All sitemaps validated successfully."

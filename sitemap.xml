@@ -1,36 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
   <sitemap>
     <loc>https://core.janusgovernance.org/sitemap.xml</loc>
   </sitemap>
-
   <sitemap>
     <loc>https://docs.janusgovernance.org/sitemap.xml</loc>
   </sitemap>
-
   <sitemap>
     <loc>https://rfc.janusgovernance.org/sitemap.xml</loc>
   </sitemap>
-
   <sitemap>
     <loc>https://runtime.janusgovernance.org/sitemap.xml</loc>
   </sitemap>
-
-  <url>
-    <loc>https://janusgovernance.org/</loc>
-  </url>
-
-  <url>
-    <loc>https://janusgovernance.org/what-is-janus.html</loc>
-  </url>
-
-  <url>
-    <loc>https://janusgovernance.org/demos.html</loc>
-  </url>
-
-  <url>
-    <loc>https://framework.janusgovernance.org/</loc>
-  </url>
-
+  <sitemap>
+    <loc>https://janusgovernance.org/sitemap-pages.xml</loc>
+  </sitemap>
+  <sitemap>
+    <loc>https://framework.janusgovernance.org/sitemap.xml</loc>
+  </sitemap>
 </sitemapindex>

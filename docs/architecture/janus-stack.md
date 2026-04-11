@@ -6,58 +6,37 @@ permalink: /docs/architecture/janus-stack/
 
 # Janus Architecture
 
-Janus is a micro-governance layer designed to stabilize AI-assisted development.
 
-The architecture separates concerns into five layers:
+# Canonical Janus Architecture Stack
 
-## Core
+Janus is structured as a strict, layered architecture. Each layer is defined below according to the canonical model:
 
-The Core defines the invariant governance model.
+## 1. Core (Normative Layer)
+Defines governance semantics, contracts, and invariants. The root of the architecture. Not executable code, not a framework, not an implementation.
 
-It is specified through the RFC series and includes:
+## 2. RFCs (Formalization Layer)
+Formalizes, evolves, and constrains the Core. Not the Core itself, nor operational code.
 
-- Evidence model
-- Omission detection
-- Governance events
-- Human authority
-- Evaluation layer
-- Log reference model
+## 3. Framework (Operational Layer)
+Reusable governance mechanisms implementing Core semantics. Not the Core, not an application, not a runtime.
 
-The Core is intentionally minimal and stable.
+## 4. Runtime(s) (Execution Layer)
+Executes governed evaluation. Not the Core, not the Framework, not a demo.
 
-## Protocol Framework
+## 5. Adapters (Integration Boundary Layer)
+Connects external systems to Janus semantics. Not the Core, not a runtime, not a framework.
 
-Operational discipline for AI-assisted development.
+## 6. SDK / Tools (Developer Layer)
+Integration-facing utilities and developer surfaces. Not normative, not the Core, not a runtime.
 
-Protocols define how agents interact under the governance model.
+## 7. Implementations (Application Layer)
+Real-world systems using Janus. Not the Core, not a demo, not a framework.
 
-Examples:
+## 8. Demos (Validation Artifacts)
+Non-authoritative demonstration systems. Not implementations, not the Core, not a runtime.
 
-- Workflow protocol
-- AI communication protocol
-- Debug protocol
-- Release protocol
-
-Protocols may evolve without modifying the Core.
-
-## Runtime Layer
-
-Runtimes implement the contracts defined by the Core.
-
-Adapters may include:
-
-- Node environments
-- Apps Script runtimes
-- CSV portable environments
-- other future implementations
-
-## Demo Suite
-
-Reference demonstrations validating the governance model.
-
-The demo suite provides reproducible scenarios including:
-
-- normal operation (happy path)
+### Dependency Direction
+Each layer may depend only on layers above it. No layer may depend on a layer below it. The Core is the root and has no dependencies.
 - omission detection
 - runtime verification
 

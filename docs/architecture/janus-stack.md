@@ -37,12 +37,3 @@ Non-authoritative demonstration systems. Not implementations, not the Core, not 
 
 ### Dependency Direction
 Each layer may depend only on layers above it. No layer may depend on a layer below it. The Core is the root and has no dependencies.
-- omission detection
-- runtime verification
-
-## Papers
-
-Conceptual and theoretical framing of Janus.
-
-- Foundational paper
-- future positioning and architecture papers

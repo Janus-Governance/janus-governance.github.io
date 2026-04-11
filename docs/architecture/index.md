@@ -4,7 +4,12 @@ title: Architecture
 permalink: /docs/architecture/
 ---
 
+
 # Architecture
+
+<div style="margin: 18px 0 24px 0; text-align: right;">
+	<a href="/docs/architecture/janus-canonical-architecture.md" class="cta-link" style="font-weight: bold; color: var(--accent);">Canonical Architecture</a>
+</div>
 
 This section explains the architectural model of Janus beyond the Core RFC series.
 

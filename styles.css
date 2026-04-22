@@ -76,6 +76,10 @@ h1 {
   max-width: 860px;
 }
 
+.intro {
+  text-align: center;
+}
+
 h2 {
   margin: 0 0 12px;
   font-size: 1.05rem;

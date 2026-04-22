@@ -1,26 +1,3 @@
-      <section class="section" aria-label="Navigation">
-        <h2>Navigation</h2>
-        <nav class="cards" aria-label="System navigation links">
-          <a class="card" href="https://core.janusgovernance.org">
-            <div class="card-title">Core</div>
-          </a>
-          <a class="card" href="https://framework.janusgovernance.org">
-            <div class="card-title">Framework</div>
-          </a>
-          <a class="card" href="https://runtime.janusgovernance.org">
-            <div class="card-title">Runtime</div>
-          </a>
-          <a class="card" href="https://rfc.janusgovernance.org">
-            <div class="card-title">RFCs</div>
-          </a>
-          <a class="card" href="/demos.html">
-            <div class="card-title">Demos</div>
-          </a>
-          <a class="card" href="https://docs.janusgovernance.org">
-            <div class="card-title">Docs</div>
-          </a>
-        </nav>
-      </section>
 <!doctype html>
 <html lang="en">
   <head>
@@ -41,9 +18,6 @@
         <h1>What is Janus</h1>
         <p class="subtitle">Traceable governance for AI-assisted systems</p>
       </header>
-      <div style="margin: 18px 0 24px 0; text-align: right;">
-        <a href="/docs/architecture/janus-canonical-architecture.md" class="cta-link" style="font-weight: bold; color: var(--accent);">Canonical Architecture</a>
-      </div>
 
       <section class="section" aria-label="Overview">
         <h2>Overview</h2>
@@ -104,40 +78,6 @@ activity → evaluation → governance event → audit log → rebuildable state
           The governance flow shows the conceptual boundary: governance sits above execution and
           ensures evidence, auditability, and rebuildable state.
         </p>
-      </section>
-
-
-      <section class="section" aria-label="System map">
-        <h2>System map</h2>
-        <p class="description">The Janus architecture is a strict, layered system. Each layer depends only on those above it. Demos and Adapters are shown in their canonical positions.</p>
-        <div style="margin: 24px 0;">
-          <pre style="background: #f8f8f8; padding: 16px; border-radius: 8px; font-size: 1em; overflow-x: auto;">
-RFCs (Formalization Layer)
-   ↓
-Core (Normative Layer)
-   ↓
-Framework (Operational Layer)
-   ↓
-Runtime(s) (Execution Layer)
-   ↓
-SDK / Tools (Developer Layer)
-   ↓
-Implementations (Application Layer)
-
-Adapters (Integration Boundary Layer) ←→ Runtime(s)
-Demos (Validation Artifacts) [outside main execution path]
-          </pre>
-        </div>
-        <ul class="link-list" style="margin-bottom: 0;">
-          <li><strong>RFCs:</strong> Formalize, evolve, and constrain the Core.</li>
-          <li><strong>Core:</strong> Defines governance semantics, contracts, and invariants.</li>
-          <li><strong>Framework:</strong> Reusable governance mechanisms implementing Core semantics.</li>
-          <li><strong>Runtime(s):</strong> Executes governed evaluation.</li>
-          <li><strong>SDK / Tools:</strong> Integration-facing utilities and developer surfaces.</li>
-          <li><strong>Implementations:</strong> Real-world systems using Janus.</li>
-          <li><strong>Adapters:</strong> Connects external systems to Janus semantics.</li>
-          <li><strong>Demos:</strong> Non-authoritative demonstration systems.</li>
-        </ul>
       </section>
 
 
